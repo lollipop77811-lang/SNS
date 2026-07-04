@@ -161,6 +161,7 @@ export type Advocate = {
   pullQuote: string;
   bio: string;
   initials: string;
+  photo: string;
 };
 
 export const ADVOCATES: Advocate[] = [
@@ -179,6 +180,7 @@ export const ADVOCATES: Advocate[] = [
       "A file should read like an argument a judge can finish in one sitting. If it does not, the work is not done.",
     bio: "Diwakar Sinha founded Sinha Advocates in 1990 after five years of practice at the Patna High Court. Over thirty-five years he has appeared in criminal, civil, family, and arbitration matters across Bihar, Jharkhand, and the National Capital Region — and before the Supreme Court of India. He continues to lead the firm's most complex matters and to mentor the next generation of counsel in chambers.",
     initials: "DS",
+    photo: "/photography/founder-diwakar-sinha.png",
   },
   {
     id: "advocate-2",
@@ -198,6 +200,7 @@ export const ADVOCATES: Advocate[] = [
       "A contract that cannot be read aloud in five minutes is usually a contract that has not been thought through.",
     bio: "A. Sahay leads the corporate and commercial advisory practice, with a particular focus on shareholder arrangements, joint ventures, and commercial contracts for promoter-led businesses. Before joining the firm, Sahay practiced in the corporate team of a tier-one Indian firm and read for an LL.M. at Cambridge.",
     initials: "AS",
+    photo: "/photography/partner-a-sahay.png",
   },
   {
     id: "advocate-3",
@@ -217,6 +220,7 @@ export const ADVOCATES: Advocate[] = [
       "Most matters are won in the documents you draft before the dispute begins, not in the courtroom after it has begun.",
     bio: "R. Sinha leads the dispute resolution desk and shares the family law practice. Sinha read for an LL.M. at Columbia Law School and practiced in the disputes team of an international firm before returning to chambers. The work spans civil and commercial litigation, arbitration, and family court matters.",
     initials: "RS",
+    photo: "/photography/partner-r-sinha.png",
   },
 ];
 

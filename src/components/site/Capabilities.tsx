@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { CAPABILITIES, DEPTH_AREAS } from "./data";
+import { SectionDivider } from "./SectionDivider";
+import { PullQuote } from "./PullQuote";
 
 export function Capabilities() {
   return (
@@ -33,15 +35,20 @@ export function Capabilities() {
               <h3 className="mt-6 font-display text-2xl leading-tight tracking-tight text-[var(--ink)] transition-colors group-hover:text-[var(--parchment)] sm:text-3xl">
                 {c.title}
               </h3>
-              <p className="mt-4 text-[15px] leading-relaxed text-[var(--slate)] transition-colors group-hover:text-[var(--parchment)]/70">
+              <p className="drop-cap mt-4 text-[15px] leading-relaxed text-[var(--slate)] transition-colors group-hover:text-[var(--parchment)]/70">
                 {c.body}
               </p>
             </motion.div>
           ))}
         </div>
 
+        {/* Law-report divider */}
+        <div className="mt-8">
+          <SectionDivider label="Index of working depth" />
+        </div>
+
         {/* Depth index — statute-style list */}
-        <div className="mt-20 border-t border-[var(--ink)]/15 pt-12">
+        <div className="mt-4 border-t border-[var(--ink)]/15 pt-12">
           <div className="mb-8 flex items-baseline justify-between">
             <h3 className="font-display text-2xl tracking-tight text-[var(--ink)] sm:text-3xl">
               Index of working depth
@@ -71,6 +78,16 @@ export function Capabilities() {
           </div>
         </div>
       </div>
+
+      {/* Pull-quote breakout */}
+      <PullQuote
+        eyebrow="§IV · On continuity"
+        attribution="A. Sahay · Partner, Corporate & Consultancy"
+      >
+        A meaningful share of the firm's work comes from clients who have been
+        with the chambers for over a decade. The structure of the firm is built
+        around that continuity, not around case volume.
+      </PullQuote>
     </section>
   );
 }

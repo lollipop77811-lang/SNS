@@ -3,6 +3,8 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { SectionDivider } from "./SectionDivider";
+import { Marginalia } from "./Marginalia";
 
 type Props = {
   /**
@@ -123,68 +125,91 @@ export function Manifesto({ variant = "section", showHeading = true }: Props) {
 
         {/* Extended philosophy (page variant only) */}
         {isPage && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-15% 0px" }}
-            transition={{ duration: 0.8 }}
-            className="mt-32 grid gap-10 border-t border-[var(--parchment)]/15 pt-16 md:grid-cols-12"
-          >
-            <div className="md:col-span-4">
-              <p className="font-mono-label text-[10px] text-[var(--brass)]">
-                §I · On the file
-              </p>
-              <h3 className="mt-3 font-display text-2xl text-[var(--parchment)] sm:text-3xl">
-                The written file is the primary product.
-              </h3>
-            </div>
-            <div className="md:col-span-7 md:col-start-6">
-              <p className="text-[15px] leading-relaxed text-[var(--parchment)]/75">
-                Every engagement begins with a written assessment. We treat
-                pleadings, opinions, and briefs as the primary work — not as
-                paperwork around a court appearance. A matter that is fully
-                briefed in writing is, more often than not, a matter that
-                settles on terms the client understood in advance. A matter
-                that is not, is a matter that surprises someone.
-              </p>
-            </div>
+          <>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-15% 0px" }}
+              transition={{ duration: 0.8 }}
+              className="mt-32 grid gap-10 border-t border-[var(--parchment)]/15 pt-16 md:grid-cols-12"
+            >
+              <div className="md:col-span-4">
+                <p className="font-mono-label text-[10px] text-[var(--brass)]">
+                  §I · On the file
+                </p>
+                <h3 className="mt-3 font-display text-2xl text-[var(--parchment)] sm:text-3xl">
+                  The written file is the primary product.
+                </h3>
+              </div>
+              <div className="md:col-span-6 md:col-start-6">
+                <p className="drop-cap text-[15px] leading-relaxed text-[var(--parchment)]/75">
+                  Every engagement begins with a written assessment. We treat
+                  pleadings, opinions, and briefs as the primary work — not as
+                  paperwork around a court appearance. A matter that is fully
+                  briefed in writing is, more often than not, a matter that
+                  settles on terms the client understood in advance. A matter
+                  that is not, is a matter that surprises someone.
+                </p>
+              </div>
+              <div className="md:col-span-2 md:col-start-11">
+                <Marginalia label="Note · §I">
+                  The chambers' working culture treats the written file as the
+                  primary product.
+                </Marginalia>
+              </div>
 
-            <div className="md:col-span-4 md:col-start-1">
-              <p className="font-mono-label text-[10px] text-[var(--brass)]">
-                §II · On time
-              </p>
-              <h3 className="mt-3 font-display text-2xl text-[var(--parchment)] sm:text-3xl">
-                Counsel moves at the speed of the matter.
-              </h3>
-            </div>
-            <div className="md:col-span-7 md:col-start-6">
-              <p className="text-[15px] leading-relaxed text-[var(--parchment)]/75">
-                Some matters demand action within hours. Others — succession,
-                governance, long-running commercial disputes — unfold across
-                years. We do not confuse urgency with importance. The firm's
-                structure is built to be available when speed matters, and to
-                be patient when patience does.
-              </p>
-            </div>
+              <div className="md:col-span-4 md:col-start-1">
+                <p className="font-mono-label text-[10px] text-[var(--brass)]">
+                  §II · On time
+                </p>
+                <h3 className="mt-3 font-display text-2xl text-[var(--parchment)] sm:text-3xl">
+                  Counsel moves at the speed of the matter.
+                </h3>
+              </div>
+              <div className="md:col-span-6 md:col-start-6">
+                <p className="drop-cap text-[15px] leading-relaxed text-[var(--parchment)]/75">
+                  Some matters demand action within hours. Others — succession,
+                  governance, long-running commercial disputes — unfold across
+                  years. We do not confuse urgency with importance. The firm's
+                  structure is built to be available when speed matters, and to
+                  be patient when patience does.
+                </p>
+              </div>
+              <div className="md:col-span-2 md:col-start-11">
+                <Marginalia label="Note · §II">
+                  Urgency and importance are not the same thing.
+                </Marginalia>
+              </div>
 
-            <div className="md:col-span-4 md:col-start-1">
-              <p className="font-mono-label text-[10px] text-[var(--brass)]">
-                §III · On the client
-              </p>
-              <h3 className="mt-3 font-display text-2xl text-[var(--parchment)] sm:text-3xl">
-                We work for the person, not the file.
-              </h3>
+              <div className="md:col-span-4 md:col-start-1">
+                <p className="font-mono-label text-[10px] text-[var(--brass)]">
+                  §III · On the client
+                </p>
+                <h3 className="mt-3 font-display text-2xl text-[var(--parchment)] sm:text-3xl">
+                  We work for the person, not the file.
+                </h3>
+              </div>
+              <div className="md:col-span-6 md:col-start-6">
+                <p className="drop-cap text-[15px] leading-relaxed text-[var(--parchment)]/75">
+                  Clients are not files. They are companies, families, and
+                  individuals who carry the consequences of every decision long
+                  after the matter has closed. We draft, advise, and appear with
+                  that horizon in mind. The point of the engagement is not the
+                  engagement — it is what the client does next.
+                </p>
+              </div>
+              <div className="md:col-span-2 md:col-start-11">
+                <Marginalia label="Note · §III">
+                  The point of the engagement is what the client does next.
+                </Marginalia>
+              </div>
+            </motion.div>
+
+            {/* Law-report divider before the closing CTA */}
+            <div className="mt-24">
+              <SectionDivider light label="On the next question" />
             </div>
-            <div className="md:col-span-7 md:col-start-6">
-              <p className="text-[15px] leading-relaxed text-[var(--parchment)]/75">
-                Clients are not files. They are companies, families, and
-                individuals who carry the consequences of every decision long
-                after the matter has closed. We draft, advise, and appear with
-                that horizon in mind. The point of the engagement is not the
-                engagement — it is what the client does next.
-              </p>
-            </div>
-          </motion.div>
+          </>
         )}
 
         {/* Bottom CTA — page variant */}

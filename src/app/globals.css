@@ -259,6 +259,124 @@
   animation: marquee 40s linear infinite;
 }
 
+/* ============================================================
+   DROP CAP — 4-line Fraunces initial in oxblood
+   Apply via .drop-cap on the lead paragraph of any section.
+   ============================================================ */
+
+.drop-cap::first-letter {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 400;
+  font-size: 4.2em;
+  line-height: 0.82;
+  float: left;
+  margin: 0.08em 0.12em 0 -0.04em;
+  color: var(--oxblood);
+  font-feature-settings: "ss01", "ss02";
+  font-optical-sizing: auto;
+}
+
+/* ============================================================
+   DUOTONE PORTRAIT TREATMENT
+   Renders photos through the parchment + ink palette.
+   Uses mix-blend-mode layers over the image.
+   ============================================================ */
+
+.duotone {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+}
+.duotone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.08) brightness(0.92);
+  mix-blend-mode: luminosity;
+  opacity: 0.92;
+}
+.duotone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(92, 26, 27, 0.18) 0%,
+    rgba(11, 11, 12, 0.55) 100%
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.duotone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 245, 240, 0.22);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================================
+   MARGINALIA — small mono footnote annotations
+   Used as a right-margin annotation block.
+   ============================================================ */
+
+.marginalia {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--brass);
+  letter-spacing: 0.01em;
+  border-left: 1px solid var(--brass);
+  padding-left: 12px;
+}
+.marginalia .marg-ref {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  margin-bottom: 4px;
+}
+
+/* ============================================================
+   LAW-REPORT DIVIDER
+   Double hairline with a centered §-mark, evoking a printed statute.
+   ============================================================ */
+
+.divider-law-report {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+.divider-law-report::before,
+.divider-law-report::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--ink);
+  opacity: 0.18;
+}
+.divider-law-report .divider-mark {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  color: var(--oxblood);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* Light variant for use on dark backgrounds */
+.divider-law-report--light::before,
+.divider-law-report--light::after {
+  background-color: var(--parchment);
+  opacity: 0.22;
+}
+.divider-law-report--light .divider-mark {
+  color: var(--brass-bright);
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

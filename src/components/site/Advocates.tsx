@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import Image from "next/image";
 import { ADVOCATES } from "./data";
 
 type Props = {
@@ -22,7 +23,7 @@ export function Advocates({ limit }: Props) {
               key={adv.id}
               className="grid grid-cols-12 items-start gap-6 md:gap-10"
             >
-              {/* Portrait column */}
+              {/* Portrait column — duotone photo */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -30,25 +31,22 @@ export function Advocates({ limit }: Props) {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="col-span-12 md:col-span-4"
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-[var(--cream)]">
-                  {/* Editorial portrait placeholder — large initials + monogram */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-display text-[12rem] leading-none text-[var(--ink)]/8">
-                      {adv.initials}
-                    </span>
+                <div className="relative aspect-[4/5] overflow-hidden bg-[var(--ink)]">
+                  {/* Duotone-treated photo */}
+                  <div className="duotone absolute inset-0">
+                    <Image
+                      src={adv.photo}
+                      alt={`Portrait of ${adv.name}, ${adv.role}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover"
+                      priority={i === 0}
+                    />
                   </div>
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 opacity-[0.08]"
-                    style={{
-                      backgroundImage:
-                        "repeating-linear-gradient(0deg, transparent 0, transparent 4px, #0B0B0C 4px, #0B0B0C 5px)",
-                    }}
-                  />
-                  {/* Frame */}
-                  <div className="absolute inset-3 border border-[var(--ink)]/15" />
+                  {/* Inner frame */}
+                  <div className="absolute inset-3 border border-[var(--parchment)]/20 z-10 pointer-events-none" />
                   {/* Footer caption */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between bg-[var(--parchment)] px-3 py-2">
+                  <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between bg-[var(--parchment)] px-3 py-2">
                     <span className="font-mono-label text-[9px] text-[var(--slate)]">
                       Plate {String.fromCharCode(65 + i)}
                     </span>
@@ -90,7 +88,7 @@ export function Advocates({ limit }: Props) {
                 </div>
 
                 {/* Bio */}
-                <p className="mt-8 max-w-2xl text-[15px] leading-relaxed text-[var(--slate)]">
+                <p className="drop-cap mt-8 max-w-2xl text-[15px] leading-relaxed text-[var(--slate)]">
                   {adv.bio}
                 </p>
 

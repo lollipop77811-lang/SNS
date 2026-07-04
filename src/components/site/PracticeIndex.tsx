@@ -5,12 +5,41 @@ import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import Link from "next/link";
 import { PRACTICES } from "./data";
+import { Marginalia } from "./Marginalia";
 
 type Props = {
   /** When true, hides the in-section footer CTA (used on the /practice page itself). */
   hideFooterCta?: boolean;
   /** When set, only renders these practice indexes (used for home-page teaser). */
   limit?: number;
+};
+
+// Editorial marginalia annotations — keyed by practice index.
+const MARGINALIA: Record<string, { ref: string; body: string }> = {
+  "01": {
+    ref: "cf. Companies Act, 2013",
+    body: "Advisory spans incorporation, governance, and transactions. Most engagements begin with a written opinion before any document is drafted.",
+  },
+  "02": {
+    ref: "HMA · SMA · CrPC §125",
+    body: "Family matters are handled privately. The first written note is always an assessment of whether negotiation or the family courts is the right path.",
+  },
+  "03": {
+    ref: "CrPC · BNSS, 2023",
+    body: "The oldest standing practice at the chambers. An early read on the charge and a careful reading of the case diary shape the defence.",
+  },
+  "04": {
+    ref: "Contract Act, 1872",
+    body: "A document that cannot be read aloud in five minutes is usually a document that has not been thought through.",
+  },
+  "05": {
+    ref: "A&C Act, 1996",
+    body: "Most matters settle because the preparation leaves little doubt. Where they do not, the file is already trial-ready.",
+  },
+  "06": {
+    ref: "Standing counsel",
+    body: "For clients who do not need a matter filed, but who need a steady legal voice — companies, families, individuals.",
+  },
 };
 
 export function PracticeIndex({ hideFooterCta, limit }: Props) {
@@ -29,6 +58,7 @@ export function PracticeIndex({ hideFooterCta, limit }: Props) {
           {list.map((p) => {
             const isOpen = open === p.index;
             const isHovered = hovered === p.index;
+            const marg = MARGINALIA[p.index];
             return (
               <div
                 key={p.id}
@@ -101,12 +131,20 @@ export function PracticeIndex({ hideFooterCta, limit }: Props) {
                             {p.subtitle.split(" · ")[0]}
                           </span>
                         </div>
-                        <div className="col-span-12 md:col-span-7 md:col-start-3">
-                          <p className="text-[16px] leading-relaxed text-[var(--ink)]">
+                        <div className="col-span-12 md:col-span-6 md:col-start-3">
+                          <p className="drop-cap text-[16px] leading-relaxed text-[var(--ink)]">
                             {p.description}
                           </p>
                         </div>
                         <div className="col-span-12 md:col-span-3 md:col-start-10">
+                          {/* Marginalia annotation */}
+                          {marg && (
+                            <div className="mb-5">
+                              <Marginalia label={marg.ref}>
+                                {marg.body}
+                              </Marginalia>
+                            </div>
+                          )}
                           <p className="mb-3 font-mono-label text-[10px] text-[var(--slate)]">
                             Representative scope
                           </p>

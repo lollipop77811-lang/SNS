@@ -3,7 +3,11 @@ import { Marquee } from "@/components/site/Marquee";
 import { Manifesto } from "@/components/site/Manifesto";
 import { SectionLink, FeatureLink } from "@/components/site/SectionLink";
 import { ScrollReveal } from "@/components/site/ScrollReveal";
+import { PullQuote } from "@/components/site/PullQuote";
+import { Marginalia } from "@/components/site/Marginalia";
+import { SectionDivider } from "@/components/site/SectionDivider";
 import Link from "next/link";
+import Image from "next/image";
 import { ADVOCATES, ARTICLES } from "@/components/site/data";
 import { ArrowUpRight } from "lucide-react";
 
@@ -16,7 +20,7 @@ export default function Home() {
       <Hero />
       <Marquee />
 
-      {/* Intro — "an established legacy, modernized" */}
+      {/* Intro — "an established legacy, modernized" with marginalia */}
       <section className="bg-[var(--parchment)] py-24 md:py-36">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <ScrollReveal className="grid grid-cols-12 gap-6 md:gap-10">
@@ -33,7 +37,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="col-span-12 md:col-span-4 md:col-start-9">
-              <p className="text-[15px] leading-relaxed text-[var(--slate)]">
+              <p className="drop-cap text-[15px] leading-relaxed text-[var(--slate)]">
                 S &amp; S Law Firm carries forward the thirty-five year
                 practice of <em>Sinha Advocates</em>, founded in 1990 by Diwakar
                 Sinha, Advocate. The chambers culture is unchanged — the
@@ -41,8 +45,8 @@ export default function Home() {
               </p>
               <p className="mt-4 text-[15px] leading-relaxed text-[var(--slate)]">
                 We serve companies, consultants, high-net-worth families, and
-                institutions across civil, corporate, arbitration, real-estate,
-                banking, and constitutional practice.
+                institutions across corporate, matrimonial, criminal, drafting,
+                dispute resolution, and legal consultancy practice.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
@@ -54,8 +58,22 @@ export default function Home() {
               </div>
             </div>
           </ScrollReveal>
+
+          {/* Marginalia row — appears under the intro, right-aligned to the margin */}
+          <ScrollReveal className="mt-12 grid grid-cols-12 gap-6 md:gap-10">
+            <div className="col-span-12 md:col-span-4 md:col-start-9">
+              <Marginalia label="Note · 1990">
+                The chambers were established in Patna in 1990 with a single
+                clerk and two steel almirahs of precedents. The same ethic of
+                written preparation holds today.
+              </Marginalia>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
+
+      {/* Law-report divider */}
+      <SectionDivider label="I · The Legacy" />
 
       {/* Legacy feature */}
       <section className="bg-[var(--parchment)] pb-24 md:pb-36">
@@ -73,8 +91,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Chambers library photo strip — full-bleed duotone */}
+      <section className="relative bg-[var(--ink)]">
+        <div className="duotone relative h-[50vh] min-h-[400px] w-full">
+          <Image
+            src="/photography/chambers-library.png"
+            alt="The chambers library — dark wood bookshelves, a tall arched window, a leather reading chair."
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[var(--ink)]/60 to-transparent">
+          <div className="mx-auto w-full max-w-[1400px] px-6 pb-10 md:px-10 md:pb-16">
+            <p className="font-mono-label text-[10px] text-[var(--brass-bright)]">
+              Plate I · The Chambers
+            </p>
+            <p className="mt-3 max-w-xl font-display text-2xl italic leading-snug text-[var(--parchment)] sm:text-3xl">
+              The work of the firm is done in rooms like this — quietly, with
+              the file open, by counsel who know it.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Manifesto teaser (section variant — dark band) */}
       <Manifesto variant="section" />
+
+      {/* Pull-quote breakout — between Manifesto and Practice */}
+      <PullQuote
+        eyebrow="§III · On the file"
+        attribution="D. Sinha · Founder, 1990"
+      >
+        A file should read like an argument a judge can finish in one sitting.
+        If it does not, the work is not done.
+      </PullQuote>
+
+      {/* Law-report divider */}
+      <SectionDivider label="II · The Practice" />
 
       {/* Practice teaser — list of all six with link to /practice */}
       <section className="bg-[var(--parchment)] py-24 md:py-36">
@@ -94,9 +149,9 @@ export default function Home() {
               </h2>
             </div>
             <div className="col-span-12 md:col-span-4 md:col-start-9">
-              <p className="text-[15px] leading-relaxed text-[var(--slate)]">
-                Six working practice areas, each a real desk at the firm — not a
-                marketing line. The full index lives on its own page.
+              <p className="drop-cap text-[15px] leading-relaxed text-[var(--slate)]">
+                Six working practice areas, each a real desk at the firm — not
+                a marketing line. The full index lives on its own page.
               </p>
             </div>
           </ScrollReveal>
@@ -110,6 +165,9 @@ export default function Home() {
           />
         </div>
       </section>
+
+      {/* Law-report divider */}
+      <SectionDivider label="III · The Advocates" />
 
       {/* Advocate preview — lead advocate only */}
       <section className="bg-[var(--cream)] py-24 md:py-36">
@@ -136,25 +194,22 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Lead advocate preview */}
+          {/* Lead advocate preview — with real duotone photo */}
           <ScrollReveal className="mt-12 grid grid-cols-12 items-start gap-6 md:gap-10">
             <div className="col-span-12 md:col-span-4">
-              <div className="relative aspect-[4/5] overflow-hidden bg-[var(--parchment)]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-display text-[12rem] leading-none text-[var(--ink)]/8">
-                    {leadAdvocate.initials}
-                  </span>
+              <div className="relative aspect-[4/5] overflow-hidden bg-[var(--ink)]">
+                <div className="duotone absolute inset-0">
+                  <Image
+                    src={leadAdvocate.photo}
+                    alt={`Portrait of ${leadAdvocate.name}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                    priority
+                  />
                 </div>
-                <div
-                  aria-hidden
-                  className="absolute inset-0 opacity-[0.08]"
-                  style={{
-                    backgroundImage:
-                      "repeating-linear-gradient(0deg, transparent 0, transparent 4px, #0B0B0C 4px, #0B0B0C 5px)",
-                  }}
-                />
-                <div className="absolute inset-3 border border-[var(--ink)]/15" />
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between bg-[var(--parchment)] px-3 py-2">
+                <div className="absolute inset-3 border border-[var(--parchment)]/20 z-10 pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between bg-[var(--parchment)] px-3 py-2">
                   <span className="font-mono-label text-[9px] text-[var(--slate)]">
                     Plate A
                   </span>
@@ -178,7 +233,7 @@ export default function Home() {
                   {leadAdvocate.pullQuote}
                 </p>
               </div>
-              <p className="mt-8 max-w-2xl text-[15px] leading-relaxed text-[var(--slate)]">
+              <p className="drop-cap mt-8 max-w-2xl text-[15px] leading-relaxed text-[var(--slate)]">
                 {leadAdvocate.bio}
               </p>
               <div className="mt-8">
@@ -193,6 +248,15 @@ export default function Home() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Pull-quote breakout — before Insights */}
+      <PullQuote
+        eyebrow="§06 · From the notes"
+        attribution="On drafting arbitration clauses · March 2026"
+      >
+        The clause that matters is the one read when the parties are no longer
+        friends — not the one written when they were.
+      </PullQuote>
 
       {/* Latest from chambers — single article */}
       <section className="bg-[var(--parchment)] py-24 md:py-36">

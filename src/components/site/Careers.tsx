@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SectionDivider } from "./SectionDivider";
 
 export function Careers() {
   return (
@@ -20,7 +21,7 @@ export function Careers() {
               <br />
               <span className="italic text-[var(--oxblood)]">slowly.</span>
             </h2>
-            <p className="mt-8 max-w-md text-[15px] leading-relaxed text-[var(--slate)]">
+            <p className="drop-cap mt-8 max-w-md text-[15px] leading-relaxed text-[var(--slate)]">
               Chambers practice is apprenticeship. We take on a small number of
               junior advocates each year, with the expectation that they will
               read, draft, and appear alongside senior counsel for several
@@ -90,6 +91,14 @@ export function Careers() {
               </ul>
             </div>
           </motion.div>
+        </div>
+
+        {/* Law-report divider */}
+        <div className="mt-16">
+          <SectionDivider
+            label="An invitation, not a posting"
+            compact
+          />
         </div>
       </div>
     </section>

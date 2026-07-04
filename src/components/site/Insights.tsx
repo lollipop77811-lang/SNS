@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { ARTICLES } from "./data";
+import { PullQuote } from "./PullQuote";
 
 type Props = {
   /** When set, only renders that many articles (used for home-page teaser). */
@@ -39,7 +40,7 @@ export function Insights({ limit, hideFooterLink }: Props) {
                 </p>
               </div>
 
-              {/* Section + title */}
+              {/* Section + title + excerpt */}
               <div className="col-span-12 md:col-span-7">
                 <p className="font-mono-label text-[10px] text-[var(--oxblood)]">
                   §{a.id} · {a.section}
@@ -47,7 +48,7 @@ export function Insights({ limit, hideFooterLink }: Props) {
                 <h3 className="mt-2 font-display text-2xl leading-tight tracking-tight text-[var(--ink)] transition-colors group-hover:text-[var(--oxblood)] sm:text-3xl md:text-4xl">
                   {a.title}
                 </h3>
-                <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-[var(--slate)]">
+                <p className="drop-cap mt-3 max-w-2xl text-[14px] leading-relaxed text-[var(--slate)]">
                   {a.excerpt}
                 </p>
               </div>
@@ -78,6 +79,19 @@ export function Insights({ limit, hideFooterLink }: Props) {
           </div>
         )}
       </div>
+
+      {/* Pull-quote breakout */}
+      {!limit && (
+        <PullQuote
+          eyebrow="§06 · On the demand notice"
+          attribution="R. Sinha · Partner, Dispute Resolution"
+        >
+          The demand notice under Section 8 is the single most consequential
+          document an operational creditor drafts. The form, the defects, and
+          the recent jurisprudence on existence of dispute — all of it turns on
+          what is written here.
+        </PullQuote>
+      )}
     </section>
   );
 }
