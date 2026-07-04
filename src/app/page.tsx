@@ -9,6 +9,7 @@ import { SectionDivider } from "@/components/site/SectionDivider";
 import Link from "next/link";
 import Image from "next/image";
 import { ADVOCATES, ARTICLES } from "@/components/site/data";
+import { DuotoneMedia } from "@/components/site/DuotoneMedia";
 import { ArrowUpRight } from "lucide-react";
 
 export default function Home() {
@@ -194,18 +195,16 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Lead advocate preview — with real duotone photo */}
+          {/* Lead advocate preview — with duotone media (video or photo) */}
           <ScrollReveal className="mt-12 grid grid-cols-12 items-start gap-6 md:gap-10">
             <div className="col-span-12 md:col-span-4">
               <div className="relative aspect-[4/5] overflow-hidden bg-[var(--ink)]">
                 <div className="duotone absolute inset-0">
-                  <Image
+                  <DuotoneMedia
                     src={leadAdvocate.photo}
                     alt={`Portrait of ${leadAdvocate.name}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover"
                     priority
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
                 <div className="absolute inset-3 border border-[var(--parchment)]/20 z-10 pointer-events-none" />

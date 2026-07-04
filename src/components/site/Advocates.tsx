@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
-import Image from "next/image";
 import { ADVOCATES } from "./data";
+import { DuotoneMedia } from "./DuotoneMedia";
 
 type Props = {
   /** When set, only renders that many advocates (used for home-page teaser). */
@@ -32,15 +32,13 @@ export function Advocates({ limit }: Props) {
                 className="col-span-12 md:col-span-4"
               >
                 <div className="relative aspect-[4/5] overflow-hidden bg-[var(--ink)]">
-                  {/* Duotone-treated photo */}
+                  {/* Duotone-treated media (video or photo) */}
                   <div className="duotone absolute inset-0">
-                    <Image
+                    <DuotoneMedia
                       src={adv.photo}
                       alt={`Portrait of ${adv.name}, ${adv.role}`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover"
                       priority={i === 0}
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                   {/* Inner frame */}
