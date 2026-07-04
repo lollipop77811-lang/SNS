@@ -2,52 +2,7 @@
 
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { useRef, useState } from "react";
-
-type Milestone = {
-  year: string;
-  title: string;
-  body: string;
-  tag: string;
-};
-
-const MILESTONES: Milestone[] = [
-  {
-    year: "1990",
-    title: "Sinha Advocates is founded",
-    body: "Diwakar Sinha, Advocate, establishes chambers in Patna with a single clerk, two steel almirahs of precedents, and a commitment to plain-language counsel. Civil and writ practice form the spine of the early years.",
-    tag: "Founding",
-  },
-  {
-    year: "1996",
-    title: "Expansion into corporate advisory",
-    body: "As Bihar's industrial base reorganises, the firm begins advising regional manufacturing and trading houses on contracts, labour compliance, and dispute avoidance — moving beyond pure litigation.",
-    tag: "Practice",
-  },
-  {
-    year: "2003",
-    title: "Chambers in New Delhi",
-    body: "A second chamber opens in New Delhi to appear before the Supreme Court and the High Court of Delhi. The firm begins a steady arbitration practice representing infrastructure and real-estate developers.",
-    tag: "Expansion",
-  },
-  {
-    year: "2011",
-    title: "Ranchi presence established",
-    body: "Following the reorganisation of Jharkhand, a third chamber opens in Ranchi to serve mining, land, and revenue matters before the High Court at Ranchi.",
-    tag: "Expansion",
-  },
-  {
-    year: "2018",
-    title: "Second generation joins chambers",
-    body: "A new generation of advocates — trained in Delhi and abroad — joins the firm, bringing structured corporate, banking, and insolvency work into the practice alongside the legacy litigation base.",
-    tag: "Generation",
-  },
-  {
-    year: "2024",
-    title: "S & S Law Firm is constituted",
-    body: "The practice is reconstituted as S & S Law Firm, carrying forward the Sinha Advocates lineage — the same chambers culture, the same counsel-first ethic, modernised for the matters of the coming decade.",
-    tag: "Constitution",
-  },
-];
+import { MILESTONES } from "./data";
 
 export function LegacyTimeline() {
   const ref = useRef<HTMLDivElement>(null);
@@ -68,12 +23,10 @@ export function LegacyTimeline() {
     if (ms && ms.year !== activeYear) setActiveYear(ms.year);
   });
 
-  const progressScaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const width = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <section
-      id="legacy"
       ref={ref}
       className="relative bg-[var(--parchment)]"
       style={{ height: `${MILESTONES.length * 90}vh` }}

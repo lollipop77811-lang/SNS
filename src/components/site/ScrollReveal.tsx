@@ -47,6 +47,7 @@ export function ScrollReveal({
     <MotionTag
       ref={ref}
       className={className}
+      style={{ position: "relative" }}
       variants={variants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}

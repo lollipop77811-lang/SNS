@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Inter, IBM_Plex_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { Navbar } from "@/components/site/Navbar";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { GrainOverlay } from "@/components/site/GrainOverlay";
+import { DisclaimerModal } from "@/components/site/DisclaimerModal";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -24,7 +28,10 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "S & S Law Firm — Continuing a Legacy Since 1990",
+  title: {
+    default: "S & S Law Firm — Continuing a Legacy Since 1990",
+    template: "%s · S & S Law Firm",
+  },
   description:
     "S & S Law Firm carries forward the 35-year practice of Sinha Advocates, founded in 1990 by Diwakar Sinha, Advocate. A full-service Indian law firm serving corporate, institutional, and individual clients.",
   keywords: [
@@ -61,11 +68,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body
         className={`${inter.variable} ${plexMono.variable} ${fraunces.variable} antialiased`}
       >
-        {children}
+        <GrainOverlay />
+        <DisclaimerModal />
+        <Navbar />
+        <main className="flex min-h-screen flex-col">{children}</main>
+        <SiteFooter />
         <Toaster />
       </body>
     </html>

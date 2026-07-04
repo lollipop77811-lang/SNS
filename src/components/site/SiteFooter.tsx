@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function SiteFooter() {
   return (
@@ -19,9 +20,9 @@ export function SiteFooter() {
             className="col-span-12 md:col-span-5"
           >
             <div className="flex items-baseline gap-3">
-              <span className="font-display text-5xl">
+              <Link href="/" className="font-display text-5xl">
                 S <span className="text-[var(--brass)]">&amp;</span> S
-              </span>
+              </Link>
               <span className="font-mono-label text-[10px] text-[var(--parchment)]/60">
                 Law Firm
               </span>
@@ -45,18 +46,18 @@ export function SiteFooter() {
             </p>
             <ul className="mt-4 space-y-2">
               {[
-                ["#legacy", "Legacy"],
-                ["#philosophy", "Philosophy"],
-                ["#advocates", "Advocates"],
-                ["#capabilities", "Capabilities"],
+                ["/legacy", "Legacy"],
+                ["/philosophy", "Philosophy"],
+                ["/advocates", "Advocates"],
+                ["/capabilities", "Capabilities"],
               ].map(([href, label]) => (
                 <li key={href}>
-                  <a
+                  <Link
                     href={href}
                     className="link-reveal text-[14px] text-[var(--parchment)]/80 hover:text-[var(--brass-bright)]"
                   >
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -68,18 +69,18 @@ export function SiteFooter() {
             </p>
             <ul className="mt-4 space-y-2">
               {[
-                ["#practice", "Practice Index"],
-                ["#insights", "Insights"],
-                ["#careers", "Careers"],
-                ["#contact", "Contact"],
+                ["/practice", "Practice Index"],
+                ["/insights", "Insights"],
+                ["/careers", "Careers"],
+                ["/contact", "Contact"],
               ].map(([href, label]) => (
                 <li key={href}>
-                  <a
+                  <Link
                     href={href}
                     className="link-reveal text-[14px] text-[var(--parchment)]/80 hover:text-[var(--brass-bright)]"
                   >
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -128,7 +129,7 @@ export function SiteFooter() {
             </p>
             <p className="mt-3 text-[12px] leading-relaxed text-[var(--parchment)]/55">
               Set in Fraunces and Inter, with IBM Plex Mono for metadata. Built
-              as a single-page editorial composition. No analytics, no
+              as a multi-page editorial composition. No analytics, no
               third-party trackers.
             </p>
           </div>

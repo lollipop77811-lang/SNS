@@ -2,70 +2,24 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { ARTICLES } from "./data";
 
-const ARTICLES = [
-  {
-    id: "01",
-    date: "March 2026",
-    reading: "8 min",
-    section: "Arbitration",
-    title: "On drafting an arbitration clause that survives the dispute.",
-    excerpt:
-      "Most arbitration clauses are written when the parties are still friends. The clause that matters is the one read when they are not. A note on seat, institution, and the wording that quietly becomes the whole case.",
-  },
-  {
-    id: "02",
-    date: "February 2026",
-    reading: "5 min",
-    section: "Corporate",
-    title: "Shareholder agreements for promoter-led companies.",
-    excerpt:
-      "A short note on the clauses we see litigated most often — tag-along, drag-along, deadlocks, and the cost of an ambiguous valuation mechanism.",
-  },
-  {
-    id: "03",
-    date: "January 2026",
-    reading: "11 min",
-    section: "Insolvency",
-    title: "Section 9 IBC: the operational creditor's first move.",
-    excerpt:
-      "The demand notice under Section 8 is the single most consequential document an operational creditor drafts. A note on the form, the defects, and the recent jurisprudence on existence of dispute.",
-  },
-];
+type Props = {
+  /** When set, only renders that many articles (used for home-page teaser). */
+  limit?: number;
+  /** When true, hides the "View all notes" footer (used on the /insights page itself). */
+  hideFooterLink?: boolean;
+};
 
-export function Insights() {
+export function Insights({ limit, hideFooterLink }: Props) {
+  const list = limit ? ARTICLES.slice(0, limit) : ARTICLES;
+
   return (
-    <section
-      id="insights"
-      className="relative bg-[var(--parchment)] py-24 md:py-36"
-    >
+    <section className="relative bg-[var(--parchment)] py-24 md:py-36">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-        {/* Header */}
-        <div className="grid grid-cols-12 gap-6 border-b border-[var(--ink)]/15 pb-12">
-          <div className="col-span-12 md:col-span-7">
-            <div className="mb-5 flex items-center gap-4">
-              <span className="font-mono-label text-[11px] text-[var(--oxblood)]">
-                §06 · Insights
-              </span>
-              <span className="h-px w-16 bg-[var(--oxblood)]/40" />
-            </div>
-            <h2 className="font-display text-4xl leading-[0.95] tracking-tight text-[var(--ink)] sm:text-5xl md:text-6xl">
-              Notes from{" "}
-              <span className="italic text-[var(--oxblood)]">chambers.</span>
-            </h2>
-          </div>
-          <div className="col-span-12 md:col-span-4 md:col-start-9">
-            <p className="text-[15px] leading-relaxed text-[var(--slate)]">
-              Short notes on points of law the firm works with — written by our
-              advocates, intended for clients and counsel alike. Not legal
-              advice; a record of our reading.
-            </p>
-          </div>
-        </div>
-
         {/* Articles */}
         <div className="mt-2">
-          {ARTICLES.map((a, i) => (
+          {list.map((a, i) => (
             <motion.a
               key={a.id}
               href="#"
@@ -110,17 +64,19 @@ export function Insights() {
         </div>
 
         {/* Footer of section */}
-        <div className="mt-10 flex items-center justify-between">
-          <p className="font-mono-label text-[10px] text-[var(--slate)]">
-            Notes are issued periodically. No subscription, no newsletter.
-          </p>
-          <a
-            href="#"
-            className="link-reveal font-mono-label text-[11px] text-[var(--oxblood)]"
-          >
-            View all notes →
-          </a>
-        </div>
+        {!hideFooterLink && (
+          <div className="mt-10 flex items-center justify-between">
+            <p className="font-mono-label text-[10px] text-[var(--slate)]">
+              Notes are issued periodically. No subscription, no newsletter.
+            </p>
+            <a
+              href="#"
+              className="link-reveal font-mono-label text-[11px] text-[var(--oxblood)]"
+            >
+              View all notes →
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

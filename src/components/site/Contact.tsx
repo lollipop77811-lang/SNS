@@ -1,59 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Mail, Phone, Clock } from "lucide-react";
-
-const CHAMBERS = [
-  {
-    city: "New Delhi",
-    role: "Registered Office",
-    address: "Chambers No. 14, Lawyers' Chambers\nSupreme Court of India\nNew Delhi — 110001",
-    phone: "+91 11 2338 XXXX",
-  },
-  {
-    city: "Patna",
-    role: "Founding Chambers",
-    address: "Sinha Advocates Building\nBeerchand Patel Path\nPatna — 800001",
-    phone: "+91 612 220 XXXX",
-  },
-  {
-    city: "Ranchi",
-    role: "Jharkhand Chambers",
-    address: "Advocates' Chambers\nHigh Court of Jharkhand\nRanchi — 834001",
-    phone: "+91 651 249 XXXX",
-  },
-];
+import { Mail, Clock } from "lucide-react";
+import { CHAMBERS } from "./data";
 
 export function Contact() {
   return (
-    <section
-      id="contact"
-      className="relative bg-[var(--parchment)] py-24 md:py-36"
-    >
+    <section className="relative bg-[var(--parchment)] py-24 md:py-36">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-        {/* Header */}
-        <div className="grid grid-cols-12 gap-6 border-b border-[var(--ink)]/15 pb-12">
-          <div className="col-span-12 md:col-span-7">
-            <div className="mb-5 flex items-center gap-4">
-              <span className="font-mono-label text-[11px] text-[var(--oxblood)]">
-                §08 · Contact
-              </span>
-              <span className="h-px w-16 bg-[var(--oxblood)]/40" />
-            </div>
-            <h2 className="font-display text-4xl leading-[0.95] tracking-tight text-[var(--ink)] sm:text-5xl md:text-6xl">
-              Begin a{" "}
-              <span className="italic text-[var(--oxblood)]">conversation.</span>
-            </h2>
-          </div>
-          <div className="col-span-12 md:col-span-4 md:col-start-9">
-            <p className="text-[15px] leading-relaxed text-[var(--slate)]">
-              The firm does not accept engagements through advertising or
-              solicitation. If you have arrived here of your own accord, write
-              to us — a brief note on the matter is sufficient.
-            </p>
-          </div>
-        </div>
-
         {/* Two-column: form + chambers */}
         <div className="mt-12 grid grid-cols-12 gap-8 md:gap-12">
           {/* Form */}
@@ -65,7 +19,6 @@ export function Contact() {
             className="col-span-12 md:col-span-7"
             onSubmit={(e) => {
               e.preventDefault();
-              // Demo: in a real build this would POST to an API route.
               alert(
                 "Thank you. The firm will respond to your note within two working days."
               );

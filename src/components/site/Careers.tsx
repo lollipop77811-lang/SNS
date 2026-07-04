@@ -4,10 +4,7 @@ import { motion } from "framer-motion";
 
 export function Careers() {
   return (
-    <section
-      id="careers"
-      className="relative overflow-hidden bg-[var(--cream)] py-24 md:py-36"
-    >
+    <section className="relative overflow-hidden bg-[var(--cream)] py-24 md:py-36">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <div className="grid grid-cols-12 gap-6 md:gap-10">
           {/* Left column — heading */}
@@ -18,12 +15,6 @@ export function Careers() {
             transition={{ duration: 0.7 }}
             className="col-span-12 md:col-span-6"
           >
-            <div className="mb-5 flex items-center gap-4">
-              <span className="font-mono-label text-[11px] text-[var(--oxblood)]">
-                §07 · Join the Chambers
-              </span>
-              <span className="h-px w-16 bg-[var(--oxblood)]/40" />
-            </div>
             <h2 className="font-display text-4xl leading-[0.95] tracking-tight text-[var(--ink)] sm:text-5xl md:text-6xl">
               We hire
               <br />

@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -19,7 +20,8 @@ export function Hero() {
     <section
       ref={ref}
       id="top"
-      className="relative flex min-h-[100svh] items-end overflow-hidden bg-[var(--parchment)] pb-12 pt-32 sm:pb-20"
+      style={{ position: "relative" }}
+      className="flex min-h-[100svh] items-end overflow-hidden bg-[var(--parchment)] pb-12 pt-32 sm:pb-20"
     >
       {/* Subtle architectural backdrop — abstract vertical column lines suggesting a chamber / library */}
       <motion.div
@@ -153,18 +155,18 @@ export function Hero() {
               matters of today.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="#practice"
+              <Link
+                href="/practice"
                 className="inline-flex items-center gap-2 rounded-full bg-[var(--oxblood)] px-6 py-3 font-mono-label text-[11px] text-[var(--parchment)] transition-colors hover:bg-[var(--ink)]"
               >
                 Explore the Practice →
-              </a>
-              <a
-                href="#legacy"
+              </Link>
+              <Link
+                href="/legacy"
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--ink)]/25 px-6 py-3 font-mono-label text-[11px] text-[var(--ink)] transition-colors hover:border-[var(--ink)]"
               >
                 Read the Legacy
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>
