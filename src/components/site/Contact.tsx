@@ -54,12 +54,12 @@ export function Contact() {
                 className="mt-2 w-full border-b border-[var(--ink)]/25 bg-transparent py-3 text-[15px] text-[var(--ink)] outline-none transition-colors focus:border-[var(--oxblood)]"
               >
                 <option value="">Select an area (if known)</option>
-                <option>Civil &amp; Commercial Litigation</option>
-                <option>Corporate &amp; Commercial Advisory</option>
-                <option>Arbitration &amp; ADR</option>
-                <option>Real Estate, Land &amp; Revenue</option>
-                <option>Banking, Finance &amp; Insolvency</option>
-                <option>Constitutional &amp; Administrative</option>
+                <option>Corporate &amp; Business Law</option>
+                <option>Matrimonial &amp; Family Law</option>
+                <option>Criminal Law</option>
+                <option>Consultancy &amp; Drafting</option>
+                <option>Dispute Resolution &amp; Arbitration</option>
+                <option>Legal Consultancy</option>
                 <option>Other / Not sure</option>
               </select>
             </div>

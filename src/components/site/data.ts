@@ -60,24 +60,9 @@ export type Practice = {
 
 export const PRACTICES: Practice[] = [
   {
-    id: "civil",
-    index: "01",
-    title: "Civil & Commercial Litigation",
-    subtitle: "Suits · Writs · Appeals",
-    description:
-      "The spine of the practice since 1990. We appear in civil courts, High Courts, and the Supreme Court on contractual disputes, property and title matters, declaratory and injunctive relief, and complex commercial suits. Our approach favours early assessment, structured evidence, and a clear written theory of the case — most matters settle because the preparation leaves little doubt.",
-    matters: [
-      "Contractual & commercial disputes",
-      "Property, title & tenancy",
-      "Declaratory & injunctive relief",
-      "Appeals & revisions",
-      "Writ petitions",
-    ],
-  },
-  {
     id: "corporate",
-    index: "02",
-    title: "Corporate & Commercial Advisory",
+    index: "01",
+    title: "Corporate & Business Law",
     subtitle: "Formation · Governance · Transactions",
     description:
       "We advise companies, promoters, and family-owned businesses on the legal architecture of running and growing an enterprise — from incorporation and shareholder arrangements to commercial contracts, joint ventures, and governance review. Counsel is delivered in plain language, in writing, and on a timeline that respects commercial urgency.",
@@ -90,63 +75,78 @@ export const PRACTICES: Practice[] = [
     ],
   },
   {
-    id: "arbitration",
-    index: "03",
-    title: "Arbitration & ADR",
-    subtitle: "Domestic · International · Enforcement",
+    id: "matrimonial",
+    index: "02",
+    title: "Matrimonial & Family Law",
+    subtitle: "Marriage · Maintenance · Custody",
     description:
-      "An increasing share of commercial disputes in India is resolved outside the courtroom. We act as counsel in ad hoc and institutional arbitrations, advise on the drafting of arbitration clauses, and represent parties in court on the appointment, challenge, and enforcement of arbitral awards under the Arbitration and Conciliation Act, 1996.",
+      "Family matters demand a steadier hand than commercial disputes. We advise on marriage, separation, divorce, maintenance, and child custody — under the Hindu Marriage Act, the Special Marriage Act, the Muslim Personal Law, and the family law provisions of the Code of Criminal Procedure. The first conversation is always private, and the first written note is always an assessment of whether the matter is best resolved through negotiation or through the family courts.",
     matters: [
+      "Divorce — mutual consent & contested",
+      "Maintenance & alimony",
+      "Child custody & guardianship",
+      "Separation & settlement agreements",
+      "Annulment & restitution of conjugal rights",
+    ],
+  },
+  {
+    id: "criminal",
+    index: "03",
+    title: "Criminal Law",
+    subtitle: "Defence · Bail · Trials · Appeals",
+    description:
+      "Criminal work is the firm's oldest standing practice — a continuation of the chambers' early years at the Patna High Court. We appear for the defence in trials, appeals, and revisions, and regularly move bail applications before the Magistrates, Sessions Courts, and High Courts. The work demands an early read on the charge, a careful reading of the case diary, and a written theory of the defence — not a reliance on cross-examination alone.",
+    matters: [
+      "Bail — anticipatory & regular",
+      "Trials before Magistrates & Sessions",
+      "Appeals & revisions in High Court",
+      "Quashing petitions under §482 Cr.P.C.",
+      "White-collar & economic offences",
+    ],
+  },
+  {
+    id: "consultancy-drafting",
+    index: "04",
+    title: "Consultancy & Drafting",
+    subtitle: "Opinions · Agreements · Deeds",
+    description:
+      "A meaningful share of the firm's work never reaches a courtroom. We draft and revise agreements, deeds, wills, trusts, and opinions for companies, families, and individuals — and we advise, in writing, on the legal architecture of a transaction before it is signed. The drafting practice is built on the belief that a document that cannot be read aloud in five minutes is usually a document that has not been thought through.",
+    matters: [
+      "Commercial & business agreements",
+      "Wills, trusts & succession planning",
+      "Property deeds & transfers",
+      "Legal opinions & due diligence",
+      "Policy & compliance documents",
+    ],
+  },
+  {
+    id: "dispute-resolution",
+    index: "05",
+    title: "Dispute Resolution & Arbitration",
+    subtitle: "Litigation · Arbitration · Mediation",
+    description:
+      "When a dispute cannot be avoided, the question is rarely whether to fight — it is where, how, and on what timeline. We appear as counsel in civil and commercial litigation before courts and tribunals, and in ad hoc and institutional arbitrations under the Arbitration and Conciliation Act, 1996. Our approach favours early written assessment, structured evidence, and a clear theory of the case; most matters settle because the preparation leaves little doubt.",
+    matters: [
+      "Civil & commercial litigation",
       "Domestic & international arbitration",
       "Arbitration clause drafting",
-      "Section 11 appointment proceedings",
       "Award challenge & enforcement",
       "Mediation & conciliation",
     ],
   },
   {
-    id: "real-estate",
-    index: "04",
-    title: "Real Estate, Land & Revenue",
-    subtitle: "Title · Acquisition · Development",
-    description:
-      "Land in India carries a documentary history that often predates living memory. We conduct due diligence on title and encumbrance, advise on acquisition and development structures, and represent parties in land acquisition, revenue, and RERA matters — particularly in Bihar, Jharkhand, and the National Capital Region.",
-    matters: [
-      "Title due diligence",
-      "Land acquisition & RERA",
-      "Development & joint-development agreements",
-      "Revenue & tenancy matters",
-      "Lease & licence structuring",
-    ],
-  },
-  {
-    id: "banking",
-    index: "05",
-    title: "Banking, Finance & Insolvency",
-    subtitle: "Lending · Recovery · IBC",
-    description:
-      "We act for lenders and borrowers on documentation, enforcement, and recovery — including proceedings under the SARFAESI Act, the Recovery of Debts Act, and the Insolvency and Bankruptcy Code, 2016. The work demands a steady hand and an early read on whether a matter is best resolved through negotiation, structured restructuring, or formal proceedings.",
-    matters: [
-      "Loan & facility documentation",
-      "SARFAESI & DRT proceedings",
-      "Insolvency & bankruptcy (IBC)",
-      "Restructuring & workouts",
-      "Enforcement of security",
-    ],
-  },
-  {
-    id: "constitutional",
+    id: "legal-consultancy",
     index: "06",
-    title: "Constitutional & Administrative",
-    subtitle: "Writs · Public Law · Judicial Review",
+    title: "Legal Consultancy",
+    subtitle: "Advisory · Strategy · Opinion",
     description:
-      "A continuation of the firm's writ practice since the early 1990s. We appear in High Courts and the Supreme Court on habeas corpus, mandamus, certiorari, prohibition, and quo warranto — and on challenges to administrative and quasi-judicial action. The work is research-intensive and typically turns on the written pleadings.",
+      "For clients who do not need a matter filed, but who do need a steady legal voice — companies seeking a retained counsel, families managing succession, individuals navigating a regulatory question. We act as standing legal consultants, advise on strategy across practice areas, and issue written opinions that the client can act on. The work is quiet, ongoing, and built around long relationships rather than transactions.",
     matters: [
-      "Writ jurisdiction (Art. 226 / 32)",
-      "Judicial review of administrative action",
-      "Service & pension matters",
-      "Quasi-judicial challenges",
-      "Public interest litigation",
+      "Standing legal counsel for companies",
+      "Strategic advisory across practice areas",
+      "Written legal opinions",
+      "Regulatory & compliance advisory",
+      "Risk assessment & legal audit",
     ],
   },
 ];
@@ -171,28 +171,28 @@ export const ADVOCATES: Advocate[] = [
     enrolled: "Enrolled · 1985",
     education: ["LL.B. · Campus Law Centre, Delhi", "B.A. (Hons.) · Patna University"],
     specialisations: [
-      "Civil & Commercial Litigation",
-      "Constitutional & Writ",
-      "Arbitration",
+      "Criminal Law",
+      "Dispute Resolution & Arbitration",
+      "Matrimonial & Family Law",
     ],
     pullQuote:
       "A file should read like an argument a judge can finish in one sitting. If it does not, the work is not done.",
-    bio: "Diwakar Sinha founded Sinha Advocates in 1990 after five years of practice at the Patna High Court. Over thirty-five years he has appeared in civil, commercial, writ, and arbitration matters across Bihar, Jharkhand, and the National Capital Region — and before the Supreme Court of India. He continues to lead the firm's most complex matters and to mentor the next generation of counsel in chambers.",
+    bio: "Diwakar Sinha founded Sinha Advocates in 1990 after five years of practice at the Patna High Court. Over thirty-five years he has appeared in criminal, civil, family, and arbitration matters across Bihar, Jharkhand, and the National Capital Region — and before the Supreme Court of India. He continues to lead the firm's most complex matters and to mentor the next generation of counsel in chambers.",
     initials: "DS",
   },
   {
     id: "advocate-2",
     name: "A. Sahay",
-    role: "Partner · Corporate & Commercial",
+    role: "Partner · Corporate & Consultancy",
     enrolled: "Enrolled · 2008",
     education: [
       "LL.M. · University of Cambridge",
       "LL.B. · National Law School of India University",
     ],
     specialisations: [
-      "Corporate Advisory",
-      "Commercial Contracts",
-      "M&A and Joint Ventures",
+      "Corporate & Business Law",
+      "Consultancy & Drafting",
+      "Legal Consultancy",
     ],
     pullQuote:
       "A contract that cannot be read aloud in five minutes is usually a contract that has not been thought through.",
@@ -202,20 +202,20 @@ export const ADVOCATES: Advocate[] = [
   {
     id: "advocate-3",
     name: "R. Sinha",
-    role: "Partner · Arbitration & Litigation",
+    role: "Partner · Dispute Resolution & Family Law",
     enrolled: "Enrolled · 2012",
     education: [
       "LL.M. · Columbia Law School",
       "LL.B. · National Law University, Delhi",
     ],
     specialisations: [
-      "Domestic & International Arbitration",
-      "Commercial Litigation",
-      "Insolvency (IBC)",
+      "Dispute Resolution & Arbitration",
+      "Matrimonial & Family Law",
+      "Consultancy & Drafting",
     ],
     pullQuote:
       "Most matters are won in the documents you draft before the dispute begins, not in the courtroom after it has begun.",
-    bio: "R. Sinha leads the arbitration and commercial litigation desk. Sinha reads for an LL.M. at Columbia Law School and practiced in the disputes team of an international firm before returning to chambers. The work spans ad hoc and institutional arbitration, IBC proceedings, and award enforcement.",
+    bio: "R. Sinha leads the dispute resolution desk and shares the family law practice. Sinha read for an LL.M. at Columbia Law School and practiced in the disputes team of an international firm before returning to chambers. The work spans civil and commercial litigation, arbitration, and family court matters.",
     initials: "RS",
   },
 ];
@@ -289,18 +289,18 @@ export const CAPABILITIES: Capability[] = [
 ];
 
 export const DEPTH_AREAS = [
-  "Civil & Commercial Suits",
-  "Writ Petitions · Articles 226 & 32",
+  "Corporate & Business Structuring",
+  "Shareholder & Joint-Venture Agreements",
+  "Divorce · Mutual Consent & Contested",
+  "Maintenance, Alimony & Custody",
+  "Bail — Anticipatory & Regular",
+  "Criminal Trials & Appeals",
+  "Commercial & Business Agreements",
+  "Wills, Trusts & Succession Planning",
+  "Civil & Commercial Litigation",
   "Domestic & International Arbitration",
-  "SARFAESI & DRT Proceedings",
-  "Insolvency & Bankruptcy (IBC, 2016)",
-  "Real Estate, Land & Revenue",
-  "Corporate & Commercial Contracts",
-  "Joint Ventures & Shareholder Arrangements",
-  "RERA Matters",
-  "Service & Pension Litigation",
-  "Constitutional Challenges",
-  "Appeals · Supreme Court & High Courts",
+  "Mediation & Conciliation",
+  "Standing Legal Counsel & Opinions",
 ];
 
 export const CHAMBERS = [

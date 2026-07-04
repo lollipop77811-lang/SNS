@@ -104,7 +104,7 @@ export default function Home() {
           <SectionLink
             href="/practice"
             section="§01 → §06"
-            title="Civil, Corporate, Arbitration, Real Estate, Banking, Constitutional."
+            title="Corporate, Matrimonial, Criminal, Drafting, Dispute Resolution, Legal Consultancy."
             body="An interactive statute-style index. Tap any entry to read how the work is structured and what it typically involves."
             cta="Open the full index"
           />
