@@ -299,9 +299,17 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: grayscale(100%) contrast(1.08) brightness(0.92);
-  mix-blend-mode: luminosity;
-  opacity: 0.92;
+  /* Video shows in full original color — no duotone desaturation.
+     A subtle vignette anchors the footage inside the ink-dark card. */
+  filter: contrast(1.02);
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+/* When a video is present, suppress the duotone overlay pseudo-elements
+   so they don't tint the color footage. */
+.duotone:has(video)::before,
+.duotone:has(video)::after {
+  display: none;
 }
 .duotone::after {
   content: "";
