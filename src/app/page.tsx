@@ -63,7 +63,7 @@ export default function Home() {
           <ScrollReveal className="mt-12 grid grid-cols-12 gap-6 md:gap-10">
             <div className="col-span-12 md:col-span-4 md:col-start-9">
               <Marginalia label="Note · 1990">
-                The chambers were established in Patna in 1990 with a single
+                The chambers were established in Raipur, Chhattisgarh in 1990 with a single
                 clerk and two steel almirahs of precedents. The same ethic of
                 written preparation holds today.
               </Marginalia>
@@ -83,7 +83,7 @@ export default function Home() {
               href="/legacy"
               section="§01 · The Legacy"
               title="Thirty-five years, six milestones, one practice."
-              body="From a single chamber in Patna in 1990 to chambers in New Delhi and Ranchi today. An interactive timeline — the centerpiece of the firm's record."
+              body="From a single chamber in Raipur in 1990 to a second chamber in Bilaspur today. An interactive timeline — the centerpiece of the firm's record."
               year="1990"
               cta="Enter the timeline"
             />

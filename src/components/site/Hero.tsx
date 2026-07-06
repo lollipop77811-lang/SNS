@@ -66,7 +66,7 @@ export function Hero() {
         className="absolute left-6 top-28 hidden font-mono-label text-[10px] text-[var(--slate)] md:block md:left-10 md:top-32"
       >
         <p>§00 · The Firm</p>
-        <p className="mt-1">New Delhi · Patna · Ranchi</p>
+        <p className="mt-1">Raipur · Bilaspur · Chhattisgarh</p>
       </motion.div>
 
       {/* Top-right meta */}

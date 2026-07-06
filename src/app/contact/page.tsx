@@ -21,7 +21,7 @@ export default function ContactPage() {
         }
         intro="The firm does not accept engagements through advertising or solicitation. If you have arrived here of your own accord, write to us — a brief note on the matter is sufficient."
         meta={[
-          { label: "Chambers", value: "03" },
+          { label: "Chambers", value: "02" },
           { label: "Hours", value: "Mon–Fri" },
         ]}
       />

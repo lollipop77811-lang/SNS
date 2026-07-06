@@ -8,7 +8,7 @@ const MARQUEE_ITEMS = [
   "Banking, Finance & Insolvency",
   "Constitutional & Administrative",
   "Est. 1990",
-  "Patna · New Delhi · Ranchi",
+  "Raipur · Bilaspur · Chhattisgarh",
   "Continuing Sinha Advocates",
 ];
 

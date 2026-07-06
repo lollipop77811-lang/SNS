@@ -14,31 +14,31 @@ export const MILESTONES: Milestone[] = [
   {
     year: "1990",
     title: "Sinha Advocates is founded",
-    body: "Diwakar Sinha, Advocate, establishes chambers in Patna with a single clerk, two steel almirahs of precedents, and a commitment to plain-language counsel. Civil and writ practice form the spine of the early years.",
+    body: "Diwakar Sinha, Advocate, establishes chambers in Raipur, Chhattisgarh with a single clerk, two steel almirahs of precedents, and a commitment to plain-language counsel. Civil and writ practice form the spine of the early years.",
     tag: "Founding",
   },
   {
     year: "1996",
     title: "Expansion into corporate advisory",
-    body: "As Bihar's industrial base reorganises, the firm begins advising regional manufacturing and trading houses on contracts, labour compliance, and dispute avoidance — moving beyond pure litigation.",
+    body: "As Chhattisgarh's industrial base grows, the firm begins advising regional manufacturing and trading houses on contracts, labour compliance, and dispute avoidance — moving beyond pure litigation.",
     tag: "Practice",
   },
   {
     year: "2003",
-    title: "Chambers in New Delhi",
-    body: "A second chamber opens in New Delhi to appear before the Supreme Court and the High Court of Delhi. The firm begins a steady arbitration practice representing infrastructure and real-estate developers.",
+    title: "Bilaspur presence established",
+    body: "A second chamber opens in Bilaspur to appear regularly before the High Court of Chhattisgarh. The firm begins a steady arbitration practice representing infrastructure and real-estate developers across the region.",
     tag: "Expansion",
   },
   {
     year: "2011",
-    title: "Ranchi presence established",
-    body: "Following the reorganisation of Jharkhand, a third chamber opens in Ranchi to serve mining, land, and revenue matters before the High Court at Ranchi.",
-    tag: "Expansion",
+    title: "Supreme Court practice deepens",
+    body: "The firm begins appearing regularly before the Supreme Court of India in New Delhi on matters from the Chhattisgarh belt — mining, land acquisition, revenue, and constitutional challenges.",
+    tag: "Practice",
   },
   {
     year: "2018",
     title: "Second generation joins chambers",
-    body: "A new generation of advocates — trained in Delhi and abroad — joins the firm, bringing structured corporate, banking, and insolvency work into the practice alongside the legacy litigation base.",
+    body: "A new generation of advocates — trained at national law schools and abroad — joins the firm, bringing structured corporate, banking, and insolvency work into the practice alongside the legacy litigation base.",
     tag: "Generation",
   },
   {
@@ -95,7 +95,7 @@ export const PRACTICES: Practice[] = [
     title: "Criminal Law",
     subtitle: "Defence · Bail · Trials · Appeals",
     description:
-      "Criminal work is the firm's oldest standing practice — a continuation of the chambers' early years at the Patna High Court. We appear for the defence in trials, appeals, and revisions, and regularly move bail applications before the Magistrates, Sessions Courts, and High Courts. The work demands an early read on the charge, a careful reading of the case diary, and a written theory of the defence — not a reliance on cross-examination alone.",
+      "Criminal work is the firm's oldest standing practice — a continuation of the chambers' early years at the High Court of Chhattisgarh. We appear for the defence in trials, appeals, and revisions, and regularly move bail applications before the Magistrates, Sessions Courts, and High Courts. The work demands an early read on the charge, a careful reading of the case diary, and a written theory of the defence — not a reliance on cross-examination alone.",
     matters: [
       "Bail — anticipatory & regular",
       "Trials before Magistrates & Sessions",
@@ -170,7 +170,7 @@ export const ADVOCATES: Advocate[] = [
     name: "Diwakar Sinha",
     role: "Founder · Senior Advocate",
     enrolled: "Enrolled · 1985",
-    education: ["LL.B. · Campus Law Centre, Delhi", "B.A. (Hons.) · Patna University"],
+    education: ["LL.B. · HNLU, Raipur", "B.A. (Hons.) · Pt. Ravishankar Shukla University, Raipur"],
     specialisations: [
       "Criminal Law",
       "Dispute Resolution & Arbitration",
@@ -178,7 +178,7 @@ export const ADVOCATES: Advocate[] = [
     ],
     pullQuote:
       "A file should read like an argument a judge can finish in one sitting. If it does not, the work is not done.",
-    bio: "Diwakar Sinha founded Sinha Advocates in 1990 after five years of practice at the Patna High Court. Over thirty-five years he has appeared in criminal, civil, family, and arbitration matters across Bihar, Jharkhand, and the National Capital Region — and before the Supreme Court of India. He continues to lead the firm's most complex matters and to mentor the next generation of counsel in chambers.",
+    bio: "Diwakar Sinha founded Sinha Advocates in 1990 after five years of practice at the High Court of Chhattisgarh. Over thirty-five years he has appeared in criminal, civil, family, and arbitration matters across Chhattisgarh — and before the Supreme Court of India. He continues to lead the firm's most complex matters and to mentor the next generation of counsel in chambers.",
     initials: "DS",
     photo: "/photography/advocate-portrait.mp4",
   },
@@ -273,7 +273,7 @@ export const CAPABILITIES: Capability[] = [
   {
     label: "§I",
     title: "Multi-jurisdictional presence",
-    body: "Chambers in Patna, New Delhi, and Ranchi allow the firm to appear before the High Courts of Patna, Delhi, and Jharkhand, the Supreme Court of India, and tribunals across the National Capital Region.",
+    body: "Chambers in Raipur and Bilaspur allow the firm to appear before the High Court of Chhattisgarh, the Supreme Court of India, and tribunals across the state and the National Capital Region.",
   },
   {
     label: "§II",
@@ -309,21 +309,15 @@ export const DEPTH_AREAS = [
 
 export const CHAMBERS = [
   {
-    city: "New Delhi",
-    role: "Registered Office",
-    address: "Chambers No. 14, Lawyers' Chambers\nSupreme Court of India\nNew Delhi — 110001",
-    phone: "+91 11 2338 XXXX",
+    city: "Raipur",
+    role: "Registered Office · Founding Chambers",
+    address: "Sinha Advocates Building\nCivil Lines, Raipur\nChhattisgarh — 492001",
+    phone: "+91 771 405 XXXX",
   },
   {
-    city: "Patna",
-    role: "Founding Chambers",
-    address: "Sinha Advocates Building\nBeerchand Patel Path\nPatna — 800001",
-    phone: "+91 612 220 XXXX",
-  },
-  {
-    city: "Ranchi",
-    role: "Jharkhand Chambers",
-    address: "Advocates' Chambers\nHigh Court of Jharkhand\nRanchi — 834001",
-    phone: "+91 651 249 XXXX",
+    city: "Bilaspur",
+    role: "High Court Chambers",
+    address: "Advocates' Chambers\nHigh Court of Chhattisgarh\nBilaspur — 495001",
+    phone: "+91 7752 245 XXX",
   },
 ];

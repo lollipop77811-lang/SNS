@@ -90,9 +90,8 @@ export function SiteFooter() {
               Chambers
             </p>
             <ul className="mt-4 space-y-2 text-[14px] text-[var(--parchment)]/80">
-              <li>New Delhi</li>
-              <li>Patna</li>
-              <li>Ranchi</li>
+              <li>Raipur</li>
+              <li>Bilaspur</li>
             </ul>
             <a
               href="mailto:counsel@sslaw.in"
@@ -176,7 +175,7 @@ export function SiteFooter() {
                 Sinha &amp; Sinha
               </p>
               <p className="font-mono-label text-[10px] text-[var(--parchment)]/50">
-                Est. 1990 · Patna — New Delhi — Ranchi
+                Est. 1990 · Raipur — Bilaspur · Chhattisgarh
               </p>
             </div>
           </div>
