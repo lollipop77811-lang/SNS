@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -93,40 +94,61 @@ export function Hero() {
           </span>
         </motion.div>
 
-        {/* Headline */}
-        <motion.h1
-          style={{ y: titleY }}
-          className="font-display text-[clamp(3rem,11vw,11rem)] font-light leading-[0.92] tracking-[-0.03em] text-[var(--ink)]"
-        >
-          <motion.span
-            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="block"
+        {/* Headline + emblem — two columns on desktop, stacked on mobile */}
+        <div className="grid grid-cols-12 items-center gap-6 md:gap-10">
+          <motion.h1
+            style={{ y: titleY }}
+            className="col-span-12 font-display text-[clamp(3rem,11vw,11rem)] font-light leading-[0.92] tracking-[-0.03em] text-[var(--ink)] md:col-span-8"
           >
-            Continuing
-          </motion.span>
-          <motion.span
-            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
-            className="block italic text-[var(--oxblood)]"
+            <motion.span
+              initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="block"
+            >
+              Continuing
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
+              className="block italic text-[var(--oxblood)]"
+            >
+              a Legacy
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              className="block"
+            >
+              <span className="font-mono-label align-top text-[clamp(0.875rem,1.5vw,1.25rem)] tracking-widest text-[var(--slate)]">
+                Since{" "}
+              </span>
+              <span className="text-[var(--ink)]">1990</span>
+              <span className="text-[var(--brass)]">.</span>
+            </motion.span>
+          </motion.h1>
+
+          {/* Emblem image — right side of the headline */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92, rotate: -3 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1.2, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
+            className="col-span-12 md:col-span-4"
           >
-            a Legacy
-          </motion.span>
-          <motion.span
-            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="block"
-          >
-            <span className="font-mono-label align-top text-[clamp(0.875rem,1.5vw,1.25rem)] tracking-widest text-[var(--slate)]">
-              Since{" "}
-            </span>
-            <span className="text-[var(--ink)]">1990</span>
-            <span className="text-[var(--brass)]">.</span>
-          </motion.span>
-        </motion.h1>
+            <div className="relative mx-auto aspect-[1019/728] w-full max-w-[380px]">
+              <Image
+                src="/photography/hero-emblem.png"
+                alt="S & S Law Firm emblem"
+                fill
+                sizes="(max-width: 768px) 90vw, 30vw"
+                className="object-contain"
+                priority
+              />
+            </div>
+          </motion.div>
+        </div>
 
         {/* Subhead / founder line */}
         <motion.div
