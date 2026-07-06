@@ -7,13 +7,11 @@ import { Marginalia } from "@/components/site/Marginalia";
 import { SectionDivider } from "@/components/site/SectionDivider";
 import Link from "next/link";
 import Image from "next/image";
-import { ADVOCATES, ARTICLES } from "@/components/site/data";
+import { ADVOCATES } from "@/components/site/data";
 import { DuotoneMedia } from "@/components/site/DuotoneMedia";
-import { ArrowUpRight } from "lucide-react";
 
 export default function Home() {
   const leadAdvocate = ADVOCATES[0];
-  const latestArticle = ARTICLES[0];
 
   return (
     <>
@@ -235,81 +233,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pull-quote breakout — before Insights */}
+      {/* Pull-quote breakout — before About */}
       <PullQuote
-        eyebrow="§05 · From the notes"
-        attribution="On drafting arbitration clauses · March 2026"
+        eyebrow="§05 · On the measure of the firm"
+        attribution={`${ADVOCATES[0].name} · Founder, 1990`}
       >
-        The clause that matters is the one read when the parties are no longer
-        friends — not the one written when they were.
+        We do not measure the firm by the matters that made headlines. We
+        measure it by the client who returns, a decade later, with the next
+        question.
       </PullQuote>
 
-      {/* Latest from chambers — single article */}
+      {/* About teaser */}
       <section className="bg-[var(--parchment)] py-24 md:py-36">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <ScrollReveal className="grid grid-cols-12 gap-6 border-b border-[var(--ink)]/15 pb-10">
             <div className="col-span-12 md:col-span-7">
               <div className="mb-5 flex items-center gap-4">
                 <span className="font-mono-label text-[11px] text-[var(--oxblood)]">
-                  §05 · Insights
+                  §05 · About the Firm
                 </span>
                 <span className="h-px w-16 bg-[var(--oxblood)]/40" />
               </div>
               <h2 className="font-display text-4xl leading-[0.95] tracking-tight text-[var(--ink)] sm:text-5xl md:text-6xl">
-                Notes from{" "}
-                <span className="italic text-[var(--oxblood)]">chambers.</span>
+                An established legacy,
+                <br />
+                <span className="italic text-[var(--oxblood)]">modernized.</span>
               </h2>
             </div>
             <div className="col-span-12 md:col-span-4 md:col-start-9">
-              <p className="text-[15px] leading-relaxed text-[var(--slate)]">
-                Short notes on points of law the firm works with — written by
-                our advocates, for clients and counsel alike. Not legal advice;
-                a record of our reading.
+              <p className="drop-cap text-[15px] leading-relaxed text-[var(--slate)]">
+                S &amp; S Law Firm carries forward the thirty-five year practice
+                of Sinha Advocates, founded in 1990 in Raipur, Chhattisgarh.
+                The chambers culture is unchanged — the toolkit is current.
               </p>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal>
-            <Link
-              href="/insights"
-              className="group grid grid-cols-12 items-baseline gap-4 border-b border-[var(--ink)]/15 py-8 md:gap-8 md:py-10"
-            >
-              <div className="col-span-12 md:col-span-2">
-                <p className="font-mono-label text-[10px] text-[var(--slate)]">
-                  {latestArticle.date}
-                </p>
-                <p className="mt-1 font-mono-label text-[10px] text-[var(--slate)]/60">
-                  {latestArticle.reading} read
-                </p>
-              </div>
-              <div className="col-span-12 md:col-span-7">
-                <p className="font-mono-label text-[10px] text-[var(--oxblood)]">
-                  §{latestArticle.id} · {latestArticle.section}
-                </p>
-                <h3 className="mt-2 font-display text-2xl leading-tight tracking-tight text-[var(--ink)] transition-colors group-hover:text-[var(--oxblood)] sm:text-3xl md:text-4xl">
-                  {latestArticle.title}
-                </h3>
-                <p className="mt-3 max-w-2xl text-[14px] leading-relaxed text-[var(--slate)]">
-                  {latestArticle.excerpt}
-                </p>
-              </div>
-              <div className="col-span-12 flex justify-end md:col-span-3">
-                <span className="inline-flex items-center gap-2 font-mono-label text-[11px] text-[var(--ink)] transition-colors group-hover:text-[var(--oxblood)]">
-                  Read the note
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </span>
-              </div>
-            </Link>
-          </ScrollReveal>
-
-          <div className="mt-10">
-            <Link
-              href="/insights"
-              className="link-reveal font-mono-label text-[11px] text-[var(--oxblood)]"
-            >
-              View all notes →
-            </Link>
-          </div>
+          <SectionLink
+            href="/about"
+            section="§05 · About"
+            title="The founding, the practice, the reconstitution — and three principles held closely."
+            body="A short record of the firm: how it began in 1990, how it grew from a litigation chambers into a full-service practice, and how it was reconstituted in 2024 as S & S Law Firm."
+            cta="Read the firm's story"
+          />
         </div>
       </section>
 

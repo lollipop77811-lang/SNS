@@ -11,7 +11,7 @@ const NAV_ITEMS = [
   { label: "Practice", href: "/practice", index: "02" },
   { label: "Advocates", href: "/advocates", index: "03" },
   { label: "Capabilities", href: "/capabilities", index: "04" },
-  { label: "Insights", href: "/insights", index: "05" },
+  { label: "About", href: "/about", index: "05" },
   { label: "Careers", href: "/careers", index: "06" },
   { label: "Contact", href: "/contact", index: "07" },
 ];
