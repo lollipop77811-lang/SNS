@@ -1,6 +1,5 @@
 import { Hero } from "@/components/site/Hero";
 import { Marquee } from "@/components/site/Marquee";
-import { Manifesto } from "@/components/site/Manifesto";
 import { SectionLink, FeatureLink } from "@/components/site/SectionLink";
 import { ScrollReveal } from "@/components/site/ScrollReveal";
 import { PullQuote } from "@/components/site/PullQuote";
@@ -117,18 +116,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Manifesto teaser (section variant — dark band) */}
-      <Manifesto variant="section" />
-
-      {/* Pull-quote breakout — between Manifesto and Practice */}
-      <PullQuote
-        eyebrow="§III · On the file"
-        attribution="D. Sinha · Founder, 1990"
-      >
-        A file should read like an argument a judge can finish in one sitting.
-        If it does not, the work is not done.
-      </PullQuote>
-
       {/* Law-report divider */}
       <SectionDivider label="II · The Practice" />
 
@@ -177,7 +164,7 @@ export default function Home() {
             <div className="col-span-12 md:col-span-7">
               <div className="mb-5 flex items-center gap-4">
                 <span className="font-mono-label text-[11px] text-[var(--oxblood)]">
-                  §04 · The Advocates
+                  §03 · The Advocates
                 </span>
                 <span className="h-px w-16 bg-[var(--oxblood)]/40" />
               </div>
@@ -250,7 +237,7 @@ export default function Home() {
 
       {/* Pull-quote breakout — before Insights */}
       <PullQuote
-        eyebrow="§06 · From the notes"
+        eyebrow="§05 · From the notes"
         attribution="On drafting arbitration clauses · March 2026"
       >
         The clause that matters is the one read when the parties are no longer
@@ -264,7 +251,7 @@ export default function Home() {
             <div className="col-span-12 md:col-span-7">
               <div className="mb-5 flex items-center gap-4">
                 <span className="font-mono-label text-[11px] text-[var(--oxblood)]">
-                  §06 · Insights
+                  §05 · Insights
                 </span>
                 <span className="h-px w-16 bg-[var(--oxblood)]/40" />
               </div>
@@ -332,7 +319,7 @@ export default function Home() {
           <ScrollReveal className="grid grid-cols-12 gap-6 md:gap-10">
             <div className="col-span-12 md:col-span-8">
               <span className="font-mono-label text-[11px] text-[var(--brass-bright)]">
-                §08 · Contact
+                §07 · Contact
               </span>
               <h2 className="mt-6 font-display text-4xl leading-[0.95] tracking-tight sm:text-5xl md:text-6xl">
                 Begin a{" "}

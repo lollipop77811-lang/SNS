@@ -9,12 +9,11 @@ import { usePathname } from "next/navigation";
 const NAV_ITEMS = [
   { label: "Legacy", href: "/legacy", index: "01" },
   { label: "Practice", href: "/practice", index: "02" },
-  { label: "Philosophy", href: "/philosophy", index: "03" },
-  { label: "Advocates", href: "/advocates", index: "04" },
-  { label: "Capabilities", href: "/capabilities", index: "05" },
-  { label: "Insights", href: "/insights", index: "06" },
-  { label: "Careers", href: "/careers", index: "07" },
-  { label: "Contact", href: "/contact", index: "08" },
+  { label: "Advocates", href: "/advocates", index: "03" },
+  { label: "Capabilities", href: "/capabilities", index: "04" },
+  { label: "Insights", href: "/insights", index: "05" },
+  { label: "Careers", href: "/careers", index: "06" },
+  { label: "Contact", href: "/contact", index: "07" },
 ];
 
 export function Navbar() {

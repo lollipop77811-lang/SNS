@@ -12,7 +12,7 @@ export default function AdvocatesPage() {
   return (
     <>
       <PageHeader
-        section="§04 · The Advocates"
+        section="§03 · The Advocates"
         title={
           <>
             Counsel, in{" "}

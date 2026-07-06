@@ -12,7 +12,7 @@ export default function InsightsPage() {
   return (
     <>
       <PageHeader
-        section="§06 · Insights"
+        section="§05 · Insights"
         title={
           <>
             Notes from{" "}

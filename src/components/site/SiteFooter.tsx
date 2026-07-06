@@ -47,7 +47,6 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2">
               {[
                 ["/legacy", "Legacy"],
-                ["/philosophy", "Philosophy"],
                 ["/advocates", "Advocates"],
                 ["/capabilities", "Capabilities"],
               ].map(([href, label]) => (

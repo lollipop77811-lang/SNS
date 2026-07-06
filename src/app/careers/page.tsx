@@ -12,7 +12,7 @@ export default function CareersPage() {
   return (
     <>
       <PageHeader
-        section="§07 · Join the Chambers"
+        section="§06 · Join the Chambers"
         title={
           <>
             We hire

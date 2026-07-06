@@ -12,7 +12,7 @@ export default function CapabilitiesPage() {
   return (
     <>
       <PageHeader
-        section="§05 · Capabilities"
+        section="§04 · Capabilities"
         title={
           <>
             Areas of{" "}

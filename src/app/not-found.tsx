@@ -45,9 +45,8 @@ export default function NotFound() {
                 {[
                   ["/legacy", "§01 · The Legacy"],
                   ["/practice", "§02 · Practice Areas"],
-                  ["/philosophy", "§03 · Philosophy"],
-                  ["/advocates", "§04 · The Advocates"],
-                  ["/contact", "§08 · Contact"],
+                  ["/advocates", "§03 · The Advocates"],
+                  ["/contact", "§07 · Contact"],
                 ].map(([href, label]) => (
                   <li key={href}>
                     <Link

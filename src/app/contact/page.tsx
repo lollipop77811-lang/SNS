@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader
-        section="§08 · Contact"
+        section="§07 · Contact"
         title={
           <>
             Begin a{" "}
