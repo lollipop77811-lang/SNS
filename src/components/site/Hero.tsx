@@ -94,8 +94,9 @@ export function Hero() {
           </span>
         </motion.div>
 
-        {/* Headline + emblem — two columns on desktop, stacked on mobile */}
-        <div className="grid grid-cols-12 items-center gap-6 md:gap-10">
+        {/* Headline + emblem — two columns on desktop, stacked on mobile.
+            The emblem stretches to match the headline's height via items-stretch + h-full. */}
+        <div className="grid grid-cols-12 items-stretch gap-6 md:gap-10">
           <motion.h1
             style={{ y: titleY }}
             className="col-span-12 font-display text-[clamp(3rem,11vw,11rem)] font-light leading-[0.92] tracking-[-0.03em] text-[var(--ink)] md:col-span-8"
@@ -130,14 +131,17 @@ export function Hero() {
             </motion.span>
           </motion.h1>
 
-          {/* Emblem image — right side of the headline */}
+          {/* Emblem image — right side of the headline, height matches the headline on desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92, rotate: -3 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1.2, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
-            className="col-span-12 md:col-span-4"
+            className="col-span-12 flex items-center justify-center md:col-span-4 md:justify-end"
           >
-            <div className="relative mx-auto aspect-[1019/728] w-full max-w-[380px]">
+            <div
+              className="relative h-[clamp(8rem,30vw,18rem)] w-auto md:h-full md:max-h-[60vh]"
+              style={{ aspectRatio: "1019 / 728" }}
+            >
               <Image
                 src="/photography/hero-emblem.png"
                 alt="S & S Law Firm emblem"
