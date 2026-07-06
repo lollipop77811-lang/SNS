@@ -13,7 +13,6 @@ export function Hero() {
 
   const titleY = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const subtitleY = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
   const bgY = useTransform(scrollYProgress, [0, 1], [0, 80]);
 
   return (
@@ -96,7 +95,7 @@ export function Hero() {
 
         {/* Headline */}
         <motion.h1
-          style={{ y: titleY, opacity }}
+          style={{ y: titleY }}
           className="font-display text-[clamp(3rem,11vw,11rem)] font-light leading-[0.92] tracking-[-0.03em] text-[var(--ink)]"
         >
           <motion.span
@@ -131,7 +130,7 @@ export function Hero() {
 
         {/* Subhead / founder line */}
         <motion.div
-          style={{ y: subtitleY, opacity }}
+          style={{ y: subtitleY }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
@@ -174,7 +173,6 @@ export function Hero() {
 
       {/* Scroll cue */}
       <motion.div
-        style={{ opacity }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.4 }}
