@@ -182,11 +182,11 @@ export function AdVideoPlayer() {
             animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
             exit={{ x: 60, y: 30, opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 flex w-full max-w-md flex-col overflow-hidden bg-[var(--ink)] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] md:max-w-lg"
+            className="relative z-10 flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden bg-[var(--ink)] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] md:max-w-lg"
             onClick={handlePlayerClick}
           >
             {/* Top bar — label + counter (no close until all watched) */}
-            <div className="flex items-center justify-between border-b border-[var(--parchment)]/15 bg-[var(--ink)] px-4 py-3">
+            <div className="flex shrink-0 items-center justify-between border-b border-[var(--parchment)]/15 bg-[var(--ink)] px-4 py-3">
               <div className="flex items-center gap-3">
                 <span className="font-mono-label text-[10px] text-[var(--brass-bright)]">
                   Ad
@@ -205,12 +205,12 @@ export function AdVideoPlayer() {
                   <button
                     onClick={handleClose}
                     aria-label="Close"
-                    className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-[var(--parchment)]/30 text-[var(--parchment)] transition-colors hover:border-[var(--brass)] hover:bg-[var(--brass)] hover:text-[var(--ink)]"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--oxblood)] text-[var(--parchment)] transition-colors hover:bg-[var(--brass)] hover:text-[var(--ink)]"
                   >
-                    <X className="h-3.5 w-3.5" />
+                    <X className="h-4 w-4" />
                   </button>
                 ) : (
-                  <span className="inline-flex h-7 w-7 items-center justify-center">
+                  <span className="inline-flex h-9 w-9 items-center justify-center">
                     <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--oxblood)]" />
                   </span>
                 )}
@@ -218,7 +218,7 @@ export function AdVideoPlayer() {
             </div>
 
             {/* Progress bar */}
-            <div className="h-0.5 w-full bg-[var(--parchment)]/10">
+            <div className="h-0.5 w-full shrink-0 bg-[var(--parchment)]/10">
               <motion.div
                 className="h-full bg-[var(--oxblood)]"
                 initial={{ width: 0 }}
@@ -227,15 +227,15 @@ export function AdVideoPlayer() {
               />
             </div>
 
-            {/* Video */}
-            <div className="relative aspect-video w-full bg-black">
+            {/* Video — fixed height so portrait videos don't stretch the card */}
+            <div className="relative w-full flex-shrink-0 bg-black" style={{ height: "min(60vh, 340px)" }}>
               <video
                 ref={videoRef}
                 src={current.src}
                 onEnded={handleVideoEnded}
                 onTimeUpdate={handleTimeUpdate}
                 onError={() => setVideoError(true)}
-                className="h-full w-full object-contain"
+                className="absolute inset-0 h-full w-full object-contain"
                 playsInline
                 controls={false}
                 preload="auto"
@@ -261,17 +261,30 @@ export function AdVideoPlayer() {
               )}
             </div>
 
-            {/* Bottom bar — messaging */}
-            <div className="flex items-center justify-between border-t border-[var(--parchment)]/15 bg-[var(--ink)] px-4 py-3">
-              <p className="font-mono-label text-[9px] text-[var(--parchment)]/40">
-                {allWatched
-                  ? "Thank you for watching — you may close now."
-                  : "Please watch all videos to continue."}
-              </p>
-              {!allWatched && (
-                <span className="font-mono-label text-[9px] text-[var(--parchment)]/40">
-                  {VIDEO_SEQUENCE.length - currentIndex - 1} remaining
-                </span>
+            {/* Bottom bar — messaging + prominent close button when complete */}
+            <div className="flex shrink-0 items-center justify-between gap-3 border-t border-[var(--parchment)]/15 bg-[var(--ink)] px-4 py-3">
+              {allWatched ? (
+                <>
+                  <p className="font-mono-label text-[10px] text-[var(--brass-bright)]">
+                    ✓ All videos watched
+                  </p>
+                  <button
+                    onClick={handleClose}
+                    className="inline-flex items-center gap-2 rounded-full bg-[var(--parchment)] px-5 py-2 font-mono-label text-[11px] font-medium text-[var(--oxblood)] transition-colors hover:bg-[var(--brass)] hover:text-[var(--ink)]"
+                  >
+                    Close
+                    <X className="h-3.5 w-3.5" />
+                  </button>
+                </>
+              ) : (
+                <>
+                  <p className="font-mono-label text-[9px] text-[var(--parchment)]/40">
+                    Please watch all videos to continue.
+                  </p>
+                  <span className="font-mono-label text-[9px] text-[var(--parchment)]/40">
+                    {VIDEO_SEQUENCE.length - currentIndex - 1} remaining
+                  </span>
+                </>
               )}
             </div>
           </motion.div>
