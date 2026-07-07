@@ -6,6 +6,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { GrainOverlay } from "@/components/site/GrainOverlay";
 import { DisclaimerModal } from "@/components/site/DisclaimerModal";
+import { AdVideoPlayer } from "@/components/site/AdVideoPlayer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -74,6 +75,7 @@ export default function RootLayout({
       >
         <GrainOverlay />
         <DisclaimerModal />
+        <AdVideoPlayer />
         <Navbar />
         <main className="flex min-h-screen flex-col">{children}</main>
         <SiteFooter />
