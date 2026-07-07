@@ -129,6 +129,24 @@ export function AdVideoPlayer() {
     advanceToNext();
   }, [advanceToNext]);
 
+  // Fallback: the `ended` event is unreliable in some browsers/encodings.
+  // Watch `timeupdate` and advance when the video is within 0.3s of the end.
+  // Use a ref guard so we don't advance twice for the same video.
+  const advancedRef = useRef(false);
+  const handleTimeUpdate = useCallback(() => {
+    const v = videoRef.current;
+    if (!v || advancedRef.current) return;
+    if (v.duration && v.currentTime >= v.duration - 0.3) {
+      advancedRef.current = true;
+      advanceToNext();
+    }
+  }, [advanceToNext]);
+
+  // Reset the advance guard whenever the index changes (new video loaded).
+  useEffect(() => {
+    advancedRef.current = false;
+  }, [currentIndex, active]);
+
   const handleClose = useCallback(() => {
     if (!allWatched) return;
     setActive(false);
@@ -215,6 +233,7 @@ export function AdVideoPlayer() {
                 ref={videoRef}
                 src={current.src}
                 onEnded={handleVideoEnded}
+                onTimeUpdate={handleTimeUpdate}
                 onError={() => setVideoError(true)}
                 className="h-full w-full object-contain"
                 playsInline
